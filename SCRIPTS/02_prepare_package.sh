@@ -17,6 +17,10 @@ CONFIG_PREEMPT_RT=y
 CONFIG_PREEMPTION=y
 ' >> ./target/linux/rockchip/config-default
 }
+
+#Fix PPPoE PHY ID
+rm -fr ./target/linux/rockchip/patches-5.4/005-rockchip-rk3328-add-compatible-to-NanoPi-R2S-etherne.patch
+wget -P target/linux/rockchip/patches-5.4 https://raw.githubusercontent.com/nicksun98/openwrt/master/target/linux/rockchip/patches-5.4/005-rockchip-rk3328-add-compatible-to-NanoPi-R2S-etherne.patch
 #HW-RNG
 #patch -p1 < ../PATCH/new/main/Support-hardware-random-number-generator-for-RK3328.patch
 #Crypto（test
